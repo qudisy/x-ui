@@ -51,7 +51,7 @@ systemctl restart x-ui
 curl -fsSL https://get.docker.com | sh
 ```
 
-2. 安装x-ui
+2. install x-ui 
 
 ```shell
 mkdir x-ui && cd x-ui
@@ -62,82 +62,81 @@ docker run -itd --network=host \
     enwaiax/x-ui:latest
 ```
 
-> Build 自己的镜像
+> Build your own image
 
 ```shell
 docker build -t x-ui .
 ```
 
-## SSL证书申请
+## SSL certificate application
 
-> 此功能与教程由[FranzKafkaYu](https://github.com/FranzKafkaYu)提供
+> This feature and tutorial are provided by [FranzKafkaYu](https://github.com/FranzKafkaYu)
 
-脚本内置SSL证书申请功能，使用该脚本申请证书，需满足以下条件:
+The script has a built-in SSL certificate application function. To use this script to apply for a certificate, the following conditions must be met:
 
-- 知晓Cloudflare 注册邮箱
-- 知晓Cloudflare Global API Key
-- 域名已通过cloudflare进行解析到当前服务器
+- Know the Cloudflare registered email
+- Know the Cloudflare Global API Key
+- The domain name has been resolved to the current server through cloudflare 
 
-获取Cloudflare Global API Key的方法:
+How to get the Cloudflare Global API Key:
     ![](media/bda84fbc2ede834deaba1c173a932223.png)
     ![](media/d13ffd6a73f938d1037d0708e31433bf.png)
 
-使用时只需输入 `域名`, `邮箱`, `API KEY`即可，示意图如下：
+Just enter 域名, 邮箱, API KEYOK, the schematic diagram is as follows:
         ![](media/2022-04-04_141259.png)
 
-注意事项:
+Precautions: 
 
-- 该脚本使用DNS API进行证书申请
-- 默认使用Let'sEncrypt作为CA方
-- 证书安装目录为/root/cert目录
-- 本脚本申请证书均为泛域名证书
+- The script uses DNS API for certificate request 
+- By default, Let'sEncrypt is used as the CA party 
+- The certificate installation directory is the /root/cert directory 
+- The certificates applied for by this script are all generic domain name certificates 
 
-## Tg机器人使用（开发中，暂不可使用）
+## Tg robot use (under development, temporarily unavailable) 
 
-> 此功能与教程由[FranzKafkaYu](https://github.com/FranzKafkaYu)提供
+> This feature and tutorial are provided by[FranzKafkaYu](https://github.com/FranzKafkaYu)
 
-X-UI支持通过Tg机器人实现每日流量通知，面板登录提醒等功能，使用Tg机器人，需要自行申请
-具体申请教程可以参考[博客链接](https://coderfan.net/how-to-use-telegram-bot-to-alarm-you-when-someone-login-into-your-vps.html)
-使用说明:在面板后台设置机器人相关参数，具体包括
+X-UI supports daily traffic notification, panel login reminder and other functions through the Tg robot. To use the Tg robot, you need to apply for the specific application tutorial. You can refer to the blog link . Instructions for use: Set the robot-related parameters in the panel background, including: 
 
-- Tg机器人Token
-- Tg机器人ChatId
-- Tg机器人周期运行时间，采用crontab语法  
+- Tg Robot Token
+- Tg Robot ChatId 
+- Tg robot cycle runtime, in crontab syntax 
 
-参考语法：
-- 30 * * * * * //每一分的第30s进行通知
-- @hourly      //每小时通知
-- @daily       //每天通知（凌晨零点整）
-- @every 8h    //每8小时通知  
+Reference syntax: 
+- 30 * * * * * //Notify at the 30s of each point 
+- @hourly // hourly notification
+- @daily // Daily notification (00:00 in the morning) 
+- @every 8h // notify every 8 hours 
 
-TG通知内容：
-- 节点流量使用
-- 面板登录提醒
-- 节点到期提醒
-- 流量预警提醒  
+TG notification content: 
+- Node traffic usage 
+- Panel login reminder 
+- Node expiration reminder 
+- Traffic warning reminder 
 
-更多功能规划中...
-## 建议系统
+More features are planned... 
+## suggestion system 
 
 - CentOS 7+
 - Ubuntu 16+
 - Debian 8+
 
-# 常见问题
+# common problem 
 
-## 从 v2-ui 迁移
+## Migrating from v2-ui 
 
-首先在安装了 v2-ui 的服务器上安装最新版 x-ui，然后使用以下命令进行迁移，将迁移本机 v2-ui 的 `所有 inbound 账号数据`至 x-ui，`面板设置和用户名密码不会迁移`
+First install the latest version of x-ui on the server where v2-ui is installed, and then use the following command to migrate, which will migrate the native v2-ui 所有 inbound 账号数据To x-ui， 面板设置和用户名密码不会迁移
 
-> 迁移成功后请 `关闭 v2-ui`并且 `重启 x-ui`，否则 v2-ui 的 inbound 会与 x-ui 的 inbound 会产生 `端口冲突`
+> After the migration is successful, please 关闭 v2-uiand 重启 x-ui, otherwise the inbound of v2-ui will be generated with the inbound of x-ui 端口冲突
+
 
 ```
 x-ui v2-ui
 ```
 
-## issue 关闭
+## issue closed 
 
-各种小白问题看得血压很高
+All kinds of small white problems see high blood pressure 
 
 ## Stargazers over time
 
