@@ -1,31 +1,32 @@
 # x-ui
 
-支持多协议多用户的 xray 面板
+xray panel supporting multi-protocol multi-user 
 
-# 功能介绍
+# Features
 
-- 系统状态监控
-- 支持多用户多协议，网页可视化操作
-- 支持的协议：vmess、vless、trojan、shadowsocks、dokodemo-door、socks、http
-- 支持配置更多传输配置
-- 流量统计，限制流量，限制到期时间
-- 可自定义 xray 配置模板
-- 支持 https 访问面板（自备域名 + ssl 证书）
-- 支持一键SSL证书申请且自动续签
-- 更多高级配置项，详见面板
+- System Status Monitoring
+- Support multi-user multi-protocol, web page visualization operation
+- Supported protocols: vmess, vless, trojan, shadowsocks, dokodemo-door, socks, http
+- Support for configuring more transport configurations
+- Traffic statistics, limit traffic, limit expiration time
+- Customizable xray configuration templates
+- Support https access panel (self-provided domain name + ssl certificate)
+- Support one-click SSL certificate application and automatic renewal
+- For more advanced configuration items, please refer to the panel
 
-# 安装&升级
+
+# Install & Upgrade 
 
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
 
-## 手动安装&升级
+## Manual install & upgrade
 
-1. 首先从 https://github.com/vaxilu/x-ui/releases 下载最新的压缩包，一般选择 `amd64`架构
-2. 然后将这个压缩包上传到服务器的 `/root/`目录下，并使用 `root`用户登录服务器
+1. First from https://github.com/vaxilu/x-ui/releases , generally choose download the latest compressed package amd64Architecture 
+2. Then upload the compressed package to the server's /root/directory, and use rootuser login server 
 
-> 如果你的服务器 cpu 架构不是 `amd64`，自行将命令中的 `amd64`替换为其他架构
+> If your server cpu architecture is not amd64, replace the command in the amd64Replace with other schema
 
 ```
 cd /root/
@@ -40,11 +41,11 @@ systemctl enable x-ui
 systemctl restart x-ui
 ```
 
-## 使用docker安装
+## Install using docker 
 
-> 此 docker 教程与 docker 镜像由[Chasing66](https://github.com/Chasing66)提供
+> This docker tutorial and docker image are provided [Chasing66]([url](https://github.com/Chasing66)) by
 
-1. 安装docker
+1. install docker 
 
 ```shell
 curl -fsSL https://get.docker.com | sh
